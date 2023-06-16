@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Titillium+Web:wght@700&display=swap"
+    rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi Step Form</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main id="app">
+    <form>
+      <div class="step-progress">
+        <strong class="done">Contato</strong>
+        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.41663 2L6.41663 7L1.41663 12" stroke="#323238" stroke-width="2" stroke-linecap="square" />
+        </svg>
+
+        <strong class="active">Empresa</strong>
+        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.41663 2L6.41663 7L1.41663 12" stroke="#323238" stroke-width="2" stroke-linecap="square" />
+        </svg>
+
+        <strong>Projeto</strong>
+      </div>
+
+      <div class="form-step active">
+        <div class="content">
+          <div class="input-wrapper">
+            <label for="name">Nome</label>
+            <input id="name" name="name" type="text" placeholder="Como prefere ser chamado?" required>
+          </div>
+
+          <div class="input-wrapper">
+            <label for="phone">Telefone</label>
+            <input id="phone" name="phone" type="text" onkeypress="return /\d/.test(event.key)"
+              placeholder="Digite seu número de telefone">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" placeholder="Digite seu e-mail" required>
+          </div>
+
+        </div>
+        <div class="button-wrapper justify-end">
+          <button type="button" class="btn primary">CONTINUAR</button>
+        </div>
+      </div>
+
+      <div class="form-step">
+        <div class="content">
+          <div class="input-wrapper">
+            <label for="business-name">Nome da empresa</label>
+            <input id="business-name" name="business-name" type="text" placeholder="Qual é o nome da empresa">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="business-colab-number">Número de funcionários</label>
+            <input id="business-colab-number" name="business-colab-number" type="text"
+              onkeypress="return /\d/.test(event.key)" placeholder=" Digite o número de colaboradores">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="business-about">Sobre seu negócio</label>
+            <textarea id="business-about" name="business-about"
+              placeholder="Fale um pouco sobre seus produtos ou serviços"></textarea>
+          </div>
+
+        </div>
+        <div class="button-wrapper">
+          <button type="button" class="btn secondary">VOLTAR</button>
+          <button type="button" class="btn primary">CONTINUAR</button>
+        </div>
+      </div>
+
+      <div class="form-step">
+        <div class="content">
+          <div class="input-wrapper">
+            <label for="project">Objetivos do projeto</label>
+            <textarea id="project" name="project" placeholder="Descreva quais objetivos deste projeto"></textarea>
+          </div>
+
+        </div>
+        <div class="button-wrapper">
+          <button type="button" class="btn secondary">VOLTAR</button>
+          <button class="btn primary" type="submit">ENVIAR RESPOSTA</button>
+        </div>
+      </div>
+
+    </form>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
