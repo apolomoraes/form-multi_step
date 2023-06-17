@@ -40,6 +40,8 @@ form {
   padding: 3.2rem;
   border: 1px solid var(--color-base-gray-100);
   border-radius: .6rem;
+
+  overflow: hidden;
 }
 
 .step-progress {
@@ -168,10 +170,28 @@ textarea::placeholder {
   color: var(--color-base-gray-200);
 }
 
-.form-step {
-  display: none;
+@keyframes appear {
+  0% {
+    scale: .7;
+    opacity: 0;
+  }
 }
 
 .form-step.active {
-  display: block;
+  animation: appear 200ms 100ms ease-in-out backwards;
+}
+
+@keyframes slideout {
+  100% {
+    translateX: 50%;
+    opacity: 0;
+  }
+}
+
+.form-step {
+  animation: slideout 200ms ease-in-out forwards;
+}
+
+.hide {
+  display: none;
 }
